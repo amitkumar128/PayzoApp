@@ -1,6 +1,5 @@
 package com.amit.payzoapp.ui.screen
 
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
@@ -38,8 +37,8 @@ fun PayzoAppNavigate() {
 
                 composable(Screen.Offers.route) { OffersScreen(navController = navController) }
                 composable(Screen.Balance.route) { BalanceScreen(navController = navController) }
-                composable(Screen.Profile.route) { ProfileScreen(navController= navController) }
-                composable(Screen.Rewards.route) { RewardsScreen(navController= navController) }
+                composable(Screen.Profile.route) { ProfileScreen(navController = navController) }
+                composable(Screen.Rewards.route) { RewardsScreen(navController = navController) }
             }
         }
     }

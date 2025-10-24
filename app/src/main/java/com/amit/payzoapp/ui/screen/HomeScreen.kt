@@ -1,13 +1,27 @@
 package com.amit.payzoapp.ui.screen
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.*
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -17,9 +31,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.amit.payzoapp.R
 import com.amit.payzoapp.ui.components.HomeTopBarSection
 
@@ -118,15 +134,35 @@ private fun MoneyTransferSection(chips: List<Triple<String, Int, Color>>) {
                 horizontalArrangement = Arrangement.spacedBy(10.dp),
                 modifier = Modifier.fillMaxWidth()
             ) {
-                MoneyTransferChip(chips[0].first, chips[0].second, chips[0].third, modifier = Modifier.weight(1f))
-                MoneyTransferChip(chips[1].first, chips[1].second, chips[1].third, modifier = Modifier.weight(1f))
+                MoneyTransferChip(
+                    chips[0].first,
+                    chips[0].second,
+                    chips[0].third,
+                    modifier = Modifier.weight(1f)
+                )
+                MoneyTransferChip(
+                    chips[1].first,
+                    chips[1].second,
+                    chips[1].third,
+                    modifier = Modifier.weight(1f)
+                )
             }
             Row(
                 horizontalArrangement = Arrangement.spacedBy(10.dp),
                 modifier = Modifier.fillMaxWidth()
             ) {
-                MoneyTransferChip(chips[2].first, chips[2].second, chips[2].third, modifier = Modifier.weight(1f))
-                MoneyTransferChip(chips[3].first, chips[3].second, chips[3].third, modifier = Modifier.weight(1f))
+                MoneyTransferChip(
+                    chips[2].first,
+                    chips[2].second,
+                    chips[2].third,
+                    modifier = Modifier.weight(1f)
+                )
+                MoneyTransferChip(
+                    chips[3].first,
+                    chips[3].second,
+                    chips[3].third,
+                    modifier = Modifier.weight(1f)
+                )
             }
         }
     }
@@ -147,15 +183,35 @@ private fun RechargeSection(chips: List<Triple<String, Int, Color>>) {
                 horizontalArrangement = Arrangement.spacedBy(10.dp),
                 modifier = Modifier.fillMaxWidth()
             ) {
-                MoneyTransferChip(chips[0].first, chips[0].second, chips[0].third, modifier = Modifier.weight(1f))
-                MoneyTransferChip(chips[1].first, chips[1].second, chips[1].third, modifier = Modifier.weight(1f))
+                MoneyTransferChip(
+                    chips[0].first,
+                    chips[0].second,
+                    chips[0].third,
+                    modifier = Modifier.weight(1f)
+                )
+                MoneyTransferChip(
+                    chips[1].first,
+                    chips[1].second,
+                    chips[1].third,
+                    modifier = Modifier.weight(1f)
+                )
             }
             Row(
                 horizontalArrangement = Arrangement.spacedBy(10.dp),
                 modifier = Modifier.fillMaxWidth()
             ) {
-                MoneyTransferChip(chips[2].first, chips[2].second, chips[2].third, modifier = Modifier.weight(1f))
-                MoneyTransferChip(chips[3].first, chips[3].second, chips[3].third, modifier = Modifier.weight(1f))
+                MoneyTransferChip(
+                    chips[2].first,
+                    chips[2].second,
+                    chips[2].third,
+                    modifier = Modifier.weight(1f)
+                )
+                MoneyTransferChip(
+                    chips[3].first,
+                    chips[3].second,
+                    chips[3].third,
+                    modifier = Modifier.weight(1f)
+                )
             }
         }
     }
@@ -190,7 +246,12 @@ private fun MoreServicesSection(items: List<Pair<String, Int>>) {
 /* ---------------- Small UI pieces (chips/icons) ---------------- */
 
 @Composable
-private fun MoneyTransferChip(label: String, drawableRes: Int, bg: Color, modifier: Modifier = Modifier) {
+private fun MoneyTransferChip(
+    label: String,
+    drawableRes: Int,
+    bg: Color,
+    modifier: Modifier = Modifier
+) {
     Surface(
         modifier = modifier
             .height(64.dp),
@@ -272,4 +333,10 @@ private fun SmallServiceSquare(label: String, drawable: Int) {
             Text(label, fontSize = 12.sp)
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun PreviewHome() {
+    HomeScreen(onOpenProfile = { }, navController = rememberNavController())
 }
